@@ -12,6 +12,9 @@ const products = [
    { id: 3, name: 'Shelf', price: 32.99, available: true }
 ];
 
+
+
+
 const ProductList = () => {
   return (
 
@@ -20,6 +23,9 @@ const ProductList = () => {
         <ProductItem key={product.id} product={product} />
         
       ))}</div>
+      
+
+
       
     </div>
   )

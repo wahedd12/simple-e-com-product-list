@@ -1,11 +1,14 @@
 // import logo from './logo.svg';
- import './App.css';
+import './App.css';
 import React, { useState } from "react";
 import ProductList from "./components/ProductList";
-import Section from './components/Section';
+
 import chair from './images/chair.jpeg';
 import bed from './images/bed.jpeg';
 import door from './images/door.jpeg';
+import Login from './components/Login ';
+
+
 
 
 
@@ -19,10 +22,22 @@ const List= () => {
   }
 }
 
+ 
+const [appear, setAppear] = useState (false)
+const pop= () => {
+  if ( appear == true ){
+    setAppear (false)
+  }else{
+    setAppear(true)
+  }
+}
+
   return (
     <div className="App">
-       
-       <header>
+    
+    <div>
+
+             <header>
         
                <h3 className='company'>WASPO INVESTMENT</h3> 
                
@@ -38,7 +53,7 @@ const List= () => {
                     <li><a href="ok">Service</a>
                         <ul>
                             <li><a href="ok">Order online</a></li>
-                            <li><a href="ok">Exchange</a></li>
+                            <li><a href="ok">Item exchange</a></li>
                             <li><a href="ok">Sell out</a>
 
                             </li>
@@ -46,18 +61,27 @@ const List= () => {
                      <li><a href="ok">Contact</a></li>
                     
                     <li><a href="ok">Help</a></li>
-                    <button className="btnlogin-popup">login&Register</button>
+                    <button className="btnlogin-popup"onClick={pop} >login&Register</button>
                 </ul>
-     
+   
     </div>
+    
        </header>
-
-
        
+       
+
+   <button className="btnlogin-popup"onClick={pop} >login&Register</button>
+   
+         
+
+  {
+     appear && (<Login />)
+}   
+    </div>
+
+
        <br/>
-
-
-
+   
           <h2>Our Product List</h2>
 
           <div className='my-images'>
@@ -69,7 +93,7 @@ const List= () => {
          
           
           
-      <span>Please <button className='btn' onClick={List}>Click here
+      <span>Please <button className='btn1' onClick={List}>Click here
         </button> to see product list and prices</span>
       {
      show && (<ProductList />)

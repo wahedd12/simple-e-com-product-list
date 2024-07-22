@@ -11,6 +11,8 @@ function ProductItem({ product }) {
       ) : (
         <p>Status: Out of Stock</p>
       )}
+
+  
     </React.Fragment>
   );
 }
